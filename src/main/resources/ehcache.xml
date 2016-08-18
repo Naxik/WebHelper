@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ehcache xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="http://ehcache.org/ehcache.xsd"
+         updateCheck="true" monitoring="autodetect"
+         dynamicConfig="true">
+
+    <diskStore path="java.io.tmpdir"/>
+
+    <defaultCache
+            maxElementsInMemory="1000000"
+            eternal="false"
+            timeToIdleSeconds="1200"
+            timeToLiveSeconds="1200"
+            overflowToDisk="false"
+            diskPersistent="false"
+            diskExpiryThreadIntervalSeconds="120"
+            memoryStoreEvictionPolicy="LRU"
+            statistics="true"
+    />
+
+    <cache name="org.hibernate.cache.internal.StandardQueryCache" maxElementsInMemory="10000" eternal="false"
+           timeToIdleSeconds="600" timeToLiveSeconds="600" overflowToDisk="false"
+           memoryStoreEvictionPolicy="LFU" statistics="true"/>
+
+    <cache name="org.hibernate.cache.spi.UpdateTimestampsCache" maxElementsInMemory="1000000" eternal="true"
+           overflowToDisk="true" memoryStoreEvictionPolicy="LFU" statistics="true"/>
+
+    <cache name="ru.another.business.domain.Act" maxElementsInMemory="10000"
+           eternal="false" timeToIdleSeconds="600" timeToLiveSeconds="600" overflowToDisk="false"
+           memoryStoreEvictionPolicy="LRU" statistics="true"/>
+
+    <cache name="ru.another.business.domain.WorkCalendar" maxElementsInMemory="10000"
+           eternal="false" timeToIdleSeconds="600" timeToLiveSeconds="600" overflowToDisk="false"
+           memoryStoreEvictionPolicy="LRU" statistics="true"/>
+
+    <cache name="ru.another.business.domain.HoursInWeek" maxElementsInMemory="10000"
+           eternal="false" timeToIdleSeconds="600" timeToLiveSeconds="600" overflowToDisk="false"
+           memoryStoreEvictionPolicy="LRU" statistics="true"/>
+</ehcache>
